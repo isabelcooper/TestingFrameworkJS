@@ -13,25 +13,27 @@ function it(test, fn) {
 function expect(first) {
 
   function toEqual(second) {
-    first === second ? loadResult("Pass"): loadResult("Fail")
+    first === second ? loadResult(true): loadResult(false)
     // first === second ? console.log("    Pass") : console.warn("    Fail")
   }
 
   function toInclude(second) {
-    matches = first.filter(item => {
-      return item === second
-    })
-    matches >= [1] ? loadResult("Pass") : loadResult("Fail")
+    first.includes(second) ? loadResult(true) : loadResult(false)
     // matches >= [1] ? console.log("    Pass") : console.warn("    Fail")
   }
 
-  return {toEqual: toEqual, toInclude: toInclude}
+  function instanceOf(second) {
+    (first instanceof second) ? loadResult(true) : loadResult(false)
+  }
+
+  return {toEqual: toEqual, toInclude: toInclude, instanceOf: instanceOf}
 }
 
 
 function loadResult(outcome) {
-  let color = (outcome === "Pass") ?  "green" :  "red"
-  document.getElementById('test').innerHTML += `<span style = "color: ${color};">${outcome}</span><br>`
+  let status = (outcome === true) ?  "Pass" :  "False"
+  let color = (outcome === true) ?  "green" :  "red"
+  document.getElementById('test').innerHTML += `<span style = "color: ${color};">${status}</span><br>`
 }
 
 function loadText(text) {
