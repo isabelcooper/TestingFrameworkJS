@@ -1,0 +1,19 @@
+{
+  "name": "testing_framework",
+  "version": "1.0.0",
+  "description": "Testing framework for JS ",
+  "main": "testingFrame.js",
+  "scripts": {
+    "test": "run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isabelcooper/TestingFrameworkJS.git"
+  },
+  "author": "IsabelCooper",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/isabelcooper/TestingFrameworkJS/issues"
+  },
+  "homepage": "https://github.com/isabelcooper/TestingFrameworkJS#readme"
+}
